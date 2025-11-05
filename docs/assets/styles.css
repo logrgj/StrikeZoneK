@@ -1,0 +1,48 @@
+/* StrikeZone static site custom styles */
+:root { 
+  --bg: #0f0f0f; 
+  --fg: #ededed; 
+  --primary: #e50914; 
+  --accent: #a3a3a3; 
+}
+html, body { background: var(--bg); color: var(--fg); }
+/* Smooth fade-in utility used by IntersectionObserver */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+/* Tilt container preserves 3D */
+.tilt { transform-style: preserve-3d; will-change: transform; }
+.tilt-inner { transform-style: preserve-3d; }
+/* Subtle glow on primary buttons */
+.btn-primary { box-shadow: 0 8px 24px -8px rgba(229,9,20,.6); }
+/* Underline on hover */
+.link-underline { text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+/* Splash intro */
+#splash { opacity: 1; transition: opacity .6s ease; }
+#splash.splash-hidden { opacity: 0; pointer-events: none; }
+
+/* Optional subtle logo entrance */
+#splash .heading { 
+  animation: splashPop .7s ease-out forwards;
+}
+@keyframes splashPop {
+  0% { transform: scale(.92); opacity: 0; }
+  60% { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Marquee ticker (left-to-right) */
+.marquee { position: relative; overflow: hidden; }
+.marquee__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding-left: 100%;
+  will-change: transform;
+  animation: marquee-ltr 32s linear infinite;
+}
+@keyframes marquee-ltr {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
