@@ -10,6 +10,35 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+// Marquee: make the ticker seamless by duplicating its content
+(function () {
+  const inner = document.querySelector('.marquee__inner');
+  if (!inner) return;
+  // Clone content exactly once to produce A + A sequence
+  const original = inner.innerHTML;
+  inner.innerHTML = original + original;
+  // Ensure inline width fits two copies for smooth -50% animation
+  // Let browser compute; no explicit width needed due to inline-flex
+})();
+
+// Replace 'Contact' nav/menu labels with 'Hire Me' wherever they link to contact.html
+(function () {
+  const links = document.querySelectorAll('a[href="contact.html"]');
+  links.forEach((a) => {
+    // Replace textual links
+    if (a.textContent.trim().toLowerCase() === 'contact') {
+      a.textContent = 'Hire Me';
+    }
+    // Replace navbar CTA button label
+    if (a.classList.contains('btn-primary') || a.closest('header')) {
+      // Only if the label looks like a CTA (e.g., Book Free Trial)
+      if (a.textContent.trim().length <= 20 || /book|trial|contact/i.test(a.textContent)) {
+        a.textContent = 'Hire Me';
+      }
+    }
+  });
+})();
+
 // Simple tilt effect for cards
 function makeTilt(el) {
   const inner = el.querySelector(".tilt-inner");

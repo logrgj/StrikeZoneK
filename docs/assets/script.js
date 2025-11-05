@@ -10,6 +10,29 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
+// Marquee: seamless loop by cloning content exactly once (A + A)
+(function () {
+  const inner = document.querySelector('.marquee__inner');
+  if (!inner) return;
+  const original = inner.innerHTML;
+  inner.innerHTML = original + original;
+})();
+
+// Replace 'Contact' nav/menu labels with 'Hire Me' wherever they link to contact.html
+(function () {
+  const links = document.querySelectorAll('a[href="contact.html"]');
+  links.forEach((a) => {
+    if (a.textContent.trim().toLowerCase() === 'contact') {
+      a.textContent = 'Hire Me';
+    }
+    if (a.classList.contains('btn-primary') || a.closest('header')) {
+      if (a.textContent.trim().length <= 20 || /book|trial|contact/i.test(a.textContent)) {
+        a.textContent = 'Hire Me';
+      }
+    }
+  });
+})();
+
 // Simple tilt effect for cards
 function makeTilt(el) {
   const inner = el.querySelector(".tilt-inner");

@@ -14,8 +14,18 @@ html, body { background: var(--bg); color: var(--fg); }
 .tilt-inner { transform-style: preserve-3d; }
 /* Subtle glow on primary buttons */
 .btn-primary { box-shadow: 0 8px 24px -8px rgba(229,9,20,.6); }
+/* Freelancer-styled CTA */
+.btn-freelancer { background-color: #0b5fff; box-shadow: 0 8px 24px -8px rgba(11,95,255,.6); }
+.btn-freelancer:hover { background-color: #094fe0; }
+/* Auto-blue any primary button that goes to contact.html */
+.btn-primary[href="contact.html"] { background-color: #0b5fff !important; box-shadow: 0 8px 24px -8px rgba(11,95,255,.6); }
+.btn-primary[href="contact.html"]:hover { background-color: #094fe0 !important; }
 /* Underline on hover */
 .link-underline { text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+/* Remove personal contact info and social links (Freelancer policy) */
+footer .flex.items-center.gap-5 { display: none !important; }
+footer .mt-6.grid.gap-2 { display: none !important; }
 
 /* Splash intro */
 #splash { opacity: 1; transition: opacity .6s ease; }
@@ -31,18 +41,17 @@ html, body { background: var(--bg); color: var(--fg); }
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Marquee ticker (left-to-right) */
+/* Marquee ticker (seamless right-to-left) */
 .marquee { position: relative; overflow: hidden; }
 .marquee__inner {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
-  padding-left: 100%;
   will-change: transform;
-  animation: marquee-ltr 32s linear infinite;
+  animation: marquee-rtl 32s linear infinite;
 }
-@keyframes marquee-ltr {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0%); }
+@keyframes marquee-rtl {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
