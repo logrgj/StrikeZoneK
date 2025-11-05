@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StrikeZone Kickboxing</title>
+  <meta name="description" content="Train your body, sharpen your mind, and build unstoppable confidence — one round at a time." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+    .heading { font-family: 'Bebas Neue', sans-serif; letter-spacing: .06em; }
+  </style>
+</head>
+<body class="bg-[#0f0f0f] text-zinc-100">
+  <!-- Splash Intro -->
+  <div id="splash" class="fixed inset-0 z-[70] flex items-center justify-center bg-black">
+    <div class="text-center">
+      <div class="heading text-6xl sm:text-7xl text-white">STRIKE<span class="text-[#e50914]">ZONE</span></div>
+      <div class="mt-2 text-sm tracking-[0.35em] text-zinc-400">K I C K B O X I N G</div>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="heading text-2xl">STRIKE<span class="text-[#e50914]">ZONE</span></a>
+      <div class="hidden gap-6 md:flex">
+        <a href="index.html" class="text-sm text-zinc-300 hover:text-white link-underline">Home</a>
+        <a href="about.html" class="text-sm text-zinc-300 hover:text-white link-underline">About</a>
+        <a href="classes.html" class="text-sm text-zinc-300 hover:text-white link-underline">Classes</a>
+        <a href="gallery.html" class="text-sm text-zinc-300 hover:text-white link-underline">Gallery</a>
+        <a href="contact.html" class="text-sm text-zinc-300 hover:text-white link-underline">Contact</a>
+        <div id="more-container" class="relative">
+          <button id="more-toggle" class="text-sm text-zinc-300 hover:text-white inline-flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+            More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="more-menu" class="absolute right-0 mt-2 hidden w-48 rounded-md border border-white/10 bg-black/90 p-2 shadow-lg">
+            <a href="pricing.html" class="block rounded px-3 py-2 text-sm text-zinc-300 hover:bg-white/10">Pricing</a>
+            <a href="schedule.html" class="block rounded px-3 py-2 text-sm text-zinc-300 hover:bg-white/10">Schedule</a>
+            <a href="instructors.html" class="block rounded px-3 py-2 text-sm text-zinc-300 hover:bg-white/10">Instructors</a>
+            <a href="faq.html" class="block rounded px-3 py-2 text-sm text-zinc-300 hover:bg-white/10">FAQ</a>
+            <a href="testimonials.html" class="block rounded px-3 py-2 text-sm text-zinc-300 hover:bg-white/10">Testimonials</a>
+            <a href="policies.html" class="block rounded px-3 py-2 text-sm text-zinc-300 hover:bg-white/10">Policies</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="contact.html" class="hidden rounded-full bg-[#e50914] px-4 py-2 text-sm font-medium text-white btn-primary md:inline-block">Book Free Trial</a>
+        <button id="mobile-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-zinc-300 hover:text-white hover:bg-white/10" aria-label="Open menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+            <path fill-rule="evenodd" d="M3.75 5.25a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Zm0 6a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Zm0 6a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-black/80">
+      <div class="mx-auto max-w-7xl px-6 py-3 flex flex-col gap-3">
+        <a href="index.html" class="text-sm text-zinc-300 hover:text-white">Home</a>
+        <a href="about.html" class="text-sm text-zinc-300 hover:text-white">About</a>
+        <a href="classes.html" class="text-sm text-zinc-300 hover:text-white">Classes</a>
+        <a href="gallery.html" class="text-sm text-zinc-300 hover:text-white">Gallery</a>
+        <a href="contact.html" class="text-sm text-zinc-300 hover:text-white">Contact</a>
+        <div class="mt-2 grid grid-cols-1 gap-1">
+          <a href="pricing.html" class="text-sm text-zinc-300 hover:text-white">Pricing</a>
+          <a href="schedule.html" class="text-sm text-zinc-300 hover:text-white">Schedule</a>
+          <a href="instructors.html" class="text-sm text-zinc-300 hover:text-white">Instructors</a>
+          <a href="faq.html" class="text-sm text-zinc-300 hover:text-white">FAQ</a>
+          <a href="testimonials.html" class="text-sm text-zinc-300 hover:text-white">Testimonials</a>
+          <a href="policies.html" class="text-sm text-zinc-300 hover:text-white">Policies</a>
+        </div>
+        <a href="contact.html" class="rounded-full bg-[#e50914] px-4 py-2 text-center text-sm font-medium text-white">Book Free Trial</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative flex min-h-[85vh] items-center justify-center overflow-hidden">
+    <video id="hero-video" class="absolute inset-0 h-full w-full object-cover" autoplay loop muted playsinline poster="assets/images/gallery/black-wallpaper-black-and-white-boxer-boxing.jpg"></video>
+    <div class="pointer-events-none absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+      <h1 class="heading text-5xl sm:text-6xl md:text-7xl">Unleash Power. Master Discipline. Become Limitless.</h1>
+      <div class="mx-auto mt-6 max-w-4xl">
+        <div class="relative overflow-hidden">
+          <div class="marquee">
+            <div class="marquee__inner text-lg text-zinc-200">
+              <span>At StrikeZone Kickboxing, we train your body, sharpen your mind, and build unstoppable confidence — one round at a time.</span>
+              <span class="mx-8 text-zinc-500">•</span>
+              <span>At StrikeZone Kickboxing, we train your body, sharpen your mind, and build unstoppable confidence — one round at a time.</span>
+              <span class="mx-8 text-zinc-500">•</span>
+              <span>At StrikeZone Kickboxing, we train your body, sharpen your mind, and build unstoppable confidence — one round at a time.</span>
+              <span class="mx-8 text-zinc-500">•</span>
+              <span>At StrikeZone Kickboxing, we train your body, sharpen your mind, and build unstoppable confidence — one round at a time.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex items-center justify-center gap-4">
+        <a href="classes.html" class="rounded-full bg-[#e50914] px-6 py-3 text-white btn-primary">Join a Class</a>
+        <a href="about.html" class="rounded-full border border-white/20 px-6 py-3 text-white">Discover the Gym</a>
+      </div>
+    </div>
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid grid-cols-1 gap-6 text-center sm:grid-cols-3">
+      <div class="tilt rounded-xl border border-white/10 bg-zinc-900/60 p-6 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]">
+        <div class="tilt-inner">
+          <div class="text-4xl font-bold text-white">10+ Years</div>
+          <div class="mt-1 text-sm text-zinc-400">Experience</div>
+        </div>
+      </div>
+      <div class="tilt rounded-xl border border-white/10 bg-zinc-900/60 p-6 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]">
+        <div class="tilt-inner">
+          <div class="text-4xl font-bold text-white">300+</div>
+          <div class="mt-1 text-sm text-zinc-400">Students Trained</div>
+        </div>
+      </div>
+      <div class="tilt rounded-xl border border-white/10 bg-zinc-900/60 p-6 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]">
+        <div class="tilt-inner">
+          <div class="text-4xl font-bold text-white">20+</div>
+          <div class="mt-1 text-sm text-zinc-400">Classes Per Week</div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-zinc-300">Real training. Real results. Real fighters.</p>
+  </section>
+
+  <!-- Intro -->
+  <section class="mx-auto max-w-4xl px-6 pb-24">
+    <p class="reveal text-center text-lg text-zinc-300">StrikeZone is where discipline meets intensity. Whether you’re just starting or chasing championship form, our instructors will help you move with precision, power, and purpose.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black/80">
+    <div class="mx-auto max-w-7xl px-6 py-10 text-sm text-zinc-400">
+      <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div class="heading text-2xl text-white">STRIKE<span class="text-[#e50914]">ZONE</span></div>
+        <div class="flex items-center gap-5">
+          <a href="#" class="hover:text-white">Instagram</a>
+          <a href="#" class="hover:text-white">YouTube</a>
+          <a href="#" class="hover:text-white">TikTok</a>
+          <a href="#" class="hover:text-white">Facebook</a>
+        </div>
+      </div>
+      <div class="mt-6 grid gap-2 text-zinc-500">
+        <div>123 Strike Street, New York, NY</div>
+        <div>+1 (555) 777-2025 • <a href="mailto:KlesLwR@gmail.com" class="underline hover:text-white">KlesLwR@gmail.com</a></div>
+      </div>
+      <div class="mt-8 text-xs text-zinc-600">© <span id="year"></span> StrikeZone Kickboxing. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
